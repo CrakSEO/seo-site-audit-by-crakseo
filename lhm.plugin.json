@@ -1,0 +1,80 @@
+{
+  "version": "1.0.0",
+  "author": "CrakSEO",
+  "authorUrl": "https://github.com/CrakSEO",
+  "icon": "https://raw.githubusercontent.com/CrakSEO/crakseo-mcp-plugins/main/seo-tools-by-crakseo/assets/logo.png",
+  "identifier": "crakseo-site-audit",
+  "name": "SEO Site Audit: Technical SEO Checker & Page Speed by CrakSEO",
+  "description": "SEO site audit and technical SEO checker: on-page SEO checks, page speed, Lighthouse and Core Web Vitals scores for up to 5 URLs per call.",
+  "homepage": "https://crakseo.com/mcp/site-audit",
+  "cloudEndpoint": "https://crakseo.com/mcp/site-audit",
+  "tags": [
+    "site-audit",
+    "seo-audit",
+    "website-crawl"
+  ],
+  "tools": [
+    {
+      "name": "get_api_credit_balance",
+      "description": "Free: API credit balance, availability and pricing for SEO data calls. Call first to confirm the connection.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "run_seo_site_audit",
+      "description": "SEO site audit: on-page and technical SEO checks for up to 5 pages, with status code, on-page score, title, meta description, H1, canonical, word count, links, load time and every failed check. Costs API credits per page.",
+      "inputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "urls": {
+            "minItems": 1,
+            "maxItems": 5,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 2048,
+              "format": "uri",
+              "description": "Absolute public http(s) URL of the page."
+            },
+            "description": "Up to 5 page URLs to audit."
+          },
+          "javascript": {
+            "default": false,
+            "description": "Render JavaScript before auditing (slower, costs more). Default false.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "urls"
+        ]
+      }
+    },
+    {
+      "name": "get_page_speed_scores",
+      "description": "Page speed and Core Web Vitals: Lighthouse performance, SEO, accessibility and best-practices scores for a page, with LCP, CLS, TBT and FCP. Costs API credits per call.",
+      "inputSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "maxLength": 2048,
+            "format": "uri",
+            "description": "Absolute public http(s) URL of the page."
+          },
+          "mobile": {
+            "default": true,
+            "description": "Test the mobile experience (true) or desktop (false). Default true.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    }
+  ]
+}

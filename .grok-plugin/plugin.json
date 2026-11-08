@@ -1,0 +1,27 @@
+{
+  "name": "seo-site-audit-by-crakseo",
+  "version": "1.0.0",
+  "description": "SEO Site Audit: Technical SEO Checker & Page Speed by CrakSEO. SEO site audit and technical SEO checker: on-page SEO checks, page speed, Lighthouse and Core Web Vitals scores for up to 5 URLs per call.",
+  "author": {
+    "name": "CrakSEO",
+    "email": "support@crakseo.com"
+  },
+  "homepage": "https://docs.crakseo.com/mcp-servers/site-audit",
+  "repository": "https://github.com/CrakSEO/crakseo-mcp-plugins",
+  "license": "MIT",
+  "keywords": [
+    "site audit",
+    "seo audit",
+    "website crawl",
+    "technical seo",
+    "crawl errors",
+    "broken links",
+    "page speed",
+    "core web vitals",
+    "lighthouse",
+    "structured data",
+    "schema validator",
+    "rich results"
+  ],
+  "logo": "assets/logo.png"
+}
